@@ -1,20 +1,5 @@
 import React, { useState } from "react";
-import {
-  FaEye,
-  FaExternalLinkAlt,
-  FaTimes,
-  FaCode,
-} from "react-icons/fa";
-
-// 👉 Import your images here
-import proj1 from "../assets/projects/daylogs.jpg";
-import proj2 from "../assets/projects/msme.jpg";
-import proj3 from "../assets/projects/upicon.jpg";
-import proj4 from "../assets/projects/eduversity.jpg";
-import proj5 from "../assets/projects/tomato.jpg";
-import proj6 from "../assets/projects/geekshop.jpg";
-import proj7 from "../assets/projects/educity.jpg";
-import proj8 from "../assets/projects/temp.jpg";
+import { FaEye, FaExternalLinkAlt, FaTimes, FaCode, FaLaptop, FaGlobe, FaReact, FaCss3Alt, FaJs } from "react-icons/fa";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -23,248 +8,277 @@ const Projects = () => {
     {
       id: 1,
       title: "DAYLOGS",
-      image: proj1,
+      description: "Modern HRMS platform with employee management dashboard",
       shortDesc: "HRMS Platform",
       link: "https://daylogs.in/",
       type: "Live",
       tech: ["React", "Tailwind", "Node.js"],
-      details:
-        "Built a complete HR management system with employee tracking, leave management, and analytics dashboard.",
-      role: "Frontend Developer",
+      details: "Built a complete HR management system with employee tracking, leave management, and analytics dashboard. Implemented responsive design and real-time updates.",
+      role: "Frontend Developer"
     },
     {
       id: 2,
       title: "MSME OSEM",
-      image: proj2,
+      description: "MSME organization website with business resources",
       shortDesc: "Business Portal",
       link: "https://msmeosem.in/",
       type: "Live",
       tech: ["React", "Bootstrap", "API"],
-      details:
-        "Developed official website for MSME organization providing resources and business support.",
-      role: "Frontend Developer",
+      details: "Developed official website for MSME organization providing resources, support, and information for small businesses. Integrated multiple services and responsive layouts.",
+      role: "Frontend Developer"
     },
     {
       id: 3,
       title: "UPICON",
-      image: proj3,
+      description: "Industrial services and solutions platform",
       shortDesc: "Industrial Services",
       link: "https://upicon.in/",
       type: "Live",
       tech: ["React", "CSS", "JavaScript"],
-      details:
-        "Created professional website showcasing industrial services and solutions.",
-      role: "Frontend Developer",
+      details: "Created professional website showcasing industrial services and solutions with portfolio gallery, service pages, and contact systems.",
+      role: "Frontend Developer"
     },
     {
       id: 4,
       title: "Eduversity",
-      image: proj4,
+      description: "Educational technology learning platform",
       shortDesc: "EdTech Platform",
       link: "https://eduversityedutech.com/",
       type: "Live",
-      tech: ["React", "Learning"],
-      details:
-        "Built educational platform offering courses and academic resources.",
-      role: "Frontend Developer",
+      tech: ["React", "EdTech", "Learning"],
+      details: "Built educational technology platform offering courses, learning resources, and academic solutions with interactive features.",
+      role: "Frontend Developer"
     },
     {
       id: 5,
       title: "TOMATO",
-      image: proj5,
+      description: "Food ordering and delivery platform",
       shortDesc: "Food Delivery",
       link: "https://food-del-lilac.vercel.app/",
       type: "Portfolio",
-      tech: ["React", "UI/UX"],
-      details:
-        "Designed a food ordering system with cart and checkout functionality.",
-      role: "Full Stack Developer",
+      tech: ["React", "CSS", "UI/UX"],
+      details: "Designed and developed complete food ordering system with menu browsing, cart management, and checkout process.",
+      role: "Full Stack Developer"
     },
     {
       id: 6,
       title: "Geek-Shop",
-      image: proj6,
+      description: "Authentication system with forms",
       shortDesc: "Login System",
       link: "https://react-form-eight-brown.vercel.app/",
       type: "Portfolio",
-      tech: ["React", "Forms"],
-      details:
-        "Created login/register system with validation and authentication.",
-      role: "Frontend Developer",
+      tech: ["React", "Forms", "Validation"],
+      details: "Created responsive login and registration forms with validation, animations, and secure authentication flow.",
+      role: "Frontend Developer"
     },
     {
       id: 7,
       title: "Educity",
-      image: proj7,
+      description: "College information and resources portal",
       shortDesc: "Education Portal",
       link: "https://education-iota-fawn.vercel.app/",
       type: "Portfolio",
-      tech: ["React", "Tailwind"],
-      details:
-        "Built college portal with course info, faculty, and resources.",
-      role: "Frontend Developer",
+      tech: ["React", "Tailwind", "Education"],
+      details: "Built comprehensive college website with course information, faculty details, events calendar, and student resources.",
+      role: "Frontend Developer"
     },
     {
       id: 8,
-      title: "Temperature Tool",
-      image: proj8,
+      title: "Temperature Converter",
+      description: "Temperature conversion tool",
       shortDesc: "Utility Tool",
       link: "https://sonikagithub.github.io/tempconverter/",
       type: "Portfolio",
-      tech: ["JavaScript"],
-      details:
-        "Temperature converter with real-time calculation.",
-      role: "Frontend Developer",
-    },
+      tech: ["JavaScript", "HTML", "CSS"],
+      details: "Developed temperature conversion application with real-time calculations between Celsius, Fahrenheit, and Kelvin.",
+      role: "Frontend Developer"
+    }
   ];
 
+  const techIcons = {
+    "React": <FaReact className="text-blue-500" />,
+    "Tailwind": <FaCss3Alt className="text-teal-500" />,
+    "JavaScript": <FaJs className="text-yellow-500" />,
+    "CSS": <FaCss3Alt className="text-blue-600" />,
+    "Bootstrap": <FaCss3Alt className="text-purple-500" />,
+    "Node.js": <FaCode className="text-green-500" />
+  };
+
   return (
-    <div className="min-h-screen py-16 px-6 bg-gradient-to-b from-gray-50 to-white">
+    <div id="projects" className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
-        
         {/* Header */}
-        <div className="text-center mb-14">
-          <h1 className="text-4xl font-bold text-gray-900">
-            My <span className="text-[#E90E65]">Projects</span>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center gap-2 mb-4">
+            <div className="w-8 h-1 bg-gradient-to-r from-transparent to-[#E90E65]"></div>
+            <FaCode className="text-xl text-[#E90E65]" />
+            <div className="w-8 h-1 bg-gradient-to-r from-[#E90E65] to-transparent"></div>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Projects <span className="text-[#E90E65]">Portfolio</span>
           </h1>
-          <p className="text-gray-500 mt-2">
-            A collection of my recent work & live projects
+          <p className="text-gray-600 max-w-xl mx-auto">
+            Live client projects and portfolio work showcasing frontend expertise
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {projects.map((project) => (
             <div
               key={project.id}
+              className="group relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:border-[#E90E65]/30 transition-all duration-300 hover:-translate-y-1 p-4 cursor-pointer"
               onClick={() => setSelectedProject(project)}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition duration-500"
             >
-              {/* Image */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
-              />
+              {/* Live Badge */}
+              <div className={`absolute -top-2 -right-2 px-3 py-1 rounded-full text-xs font-semibold ${
+                project.type === "Live" 
+                  ? "bg-green-100 text-green-800 border border-green-200" 
+                  : "bg-blue-100 text-blue-800 border border-blue-200"
+              }`}>
+                {project.type}
+              </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition"></div>
-
-              {/* Content */}
-              <div className="absolute bottom-0 p-4 text-white">
-                <h3 className="text-lg font-bold">{project.title}</h3>
-                <p className="text-sm opacity-80">
-                  {project.shortDesc}
-                </p>
-
-                <div className="flex gap-2 mt-2 flex-wrap">
-                  {project.tech.slice(0, 3).map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 bg-white/20 backdrop-blur rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {/* Icon */}
+              <div className="mb-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-[#E90E65]/10 group-hover:to-pink-100 flex items-center justify-center transition-all">
+                  {project.type === "Live" ? (
+                    <FaGlobe className="text-gray-600 group-hover:text-[#E90E65] transition-colors" />
+                  ) : (
+                    <FaLaptop className="text-gray-600 group-hover:text-[#E90E65] transition-colors" />
+                  )}
                 </div>
               </div>
 
-              {/* Hover Buttons */}
-              <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
+              {/* Content */}
+              <h3 className="font-bold text-gray-900 group-hover:text-[#E90E65] transition-colors mb-1">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                {project.shortDesc}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="flex gap-1.5 mb-4">
+                {project.tech.slice(0, 3).map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded"
+                    title={tech}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-2">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedProject(project);
                   }}
-                  className="p-3 bg-white text-black rounded-full hover:scale-110"
+                  className="flex-1 py-2 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-[#E90E65]/10 hover:to-pink-100 text-gray-700 hover:text-[#E90E65] text-sm font-medium rounded-lg transition-all group/btn"
                 >
-                  <FaEye />
+                  <span className="flex items-center justify-center gap-1">
+                    <FaEye className="text-xs" />
+                    Details
+                  </span>
                 </button>
-
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="p-3 bg-[#E90E65] text-white rounded-full hover:scale-110"
+                  className="py-2 px-3 bg-gradient-to-r from-[#E90E65] to-pink-600 text-white hover:shadow-lg text-sm font-medium rounded-lg transition-all hover:scale-105"
                 >
-                  <FaExternalLinkAlt />
+                  <FaExternalLinkAlt className="text-xs" />
                 </a>
               </div>
 
-              {/* Badge */}
-              <div className="absolute top-3 left-3 px-3 py-1 text-xs bg-white/20 backdrop-blur text-white rounded-full">
-                {project.type}
-              </div>
-
-              {/* Glow Border */}
-              <div className="absolute inset-0 border border-transparent group-hover:border-[#E90E65]/40 rounded-2xl"></div>
+              {/* Hover Effect */}
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#E90E65]/10 rounded-xl pointer-events-none transition-colors"></div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Modal */}
-      {selectedProject && (
-        <div
-          onClick={() => setSelectedProject(null)}
-          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl"
-          >
-            {/* Image */}
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="w-full h-52 object-cover"
-            />
+       
 
-            {/* Content */}
-            <div className="p-6">
-              <div className="flex justify-between">
-                <h2 className="text-2xl font-bold">
-                  {selectedProject.title}
-                </h2>
-                <FaTimes
-                  onClick={() => setSelectedProject(null)}
-                  className="cursor-pointer"
-                />
-              </div>
-
-              <p className="text-gray-600 mt-3">
-                {selectedProject.details}
-              </p>
-
-              <p className="mt-3 text-sm text-gray-500">
-                Role: {selectedProject.role}
-              </p>
-
-              <div className="flex gap-2 mt-4 flex-wrap">
-                {selectedProject.tech.map((t, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-gray-100 rounded"
+        {/* Modal */}
+        {selectedProject && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div 
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        selectedProject.type === "Live" 
+                          ? "bg-green-100 text-green-800" 
+                          : "bg-blue-100 text-blue-800"
+                      }`}>
+                        {selectedProject.type} Project
+                      </div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h3>
+                  </div>
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                   >
-                    {t}
-                  </span>
-                ))}
+                    <FaTimes className="text-gray-500 hover:text-gray-700" />
+                  </button>
+                </div>
               </div>
 
-              <a
-                href={selectedProject.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 bg-[#E90E65] text-white px-5 py-2 rounded-lg"
-              >
-                <FaExternalLinkAlt />
-                Visit Project
-              </a>
+              {/* Modal Body */}
+              <div className="p-6">
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-500 mb-2">PROJECT DESCRIPTION</h4>
+                  <p className="text-gray-700">{selectedProject.details}</p>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-500 mb-2">MY ROLE</h4>
+                  <p className="text-gray-700">{selectedProject.role}</p>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-500 mb-3">TECHNOLOGIES USED</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tech.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-2 bg-gray-100 text-gray-700 rounded-lg flex items-center gap-2"
+                      >
+                        {techIcons[tech] || <FaCode />}
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mb-8">
+                  <h4 className="text-sm font-semibold text-gray-500 mb-3">PROJECT LINK</h4>
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#E90E65] to-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105"
+                  >
+                    <FaExternalLinkAlt />
+                    Visit Live Project
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
