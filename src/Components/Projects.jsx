@@ -1,99 +1,116 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { FaEye, FaExternalLinkAlt, FaTimes, FaCode, FaLaptop, FaGlobe, FaReact, FaCss3Alt, FaJs } from "react-icons/fa";
+
+
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const projects = [
-    {
-      id: 1,
-      title: "DAYLOGS",
-      description: "Modern HRMS platform with employee management dashboard",
-      shortDesc: "HRMS Platform",
-      link: "https://daylogs.in/",
-      type: "Live",
-      tech: ["React", "Tailwind", "Node.js"],
-      details: "Built a complete HR management system with employee tracking, leave management, and analytics dashboard. Implemented responsive design and real-time updates.",
-      role: "Frontend Developer"
-    },
-    {
-      id: 2,
-      title: "MSME OSEM",
-      description: "MSME organization website with business resources",
-      shortDesc: "Business Portal",
-      link: "https://msmeosem.in/",
-      type: "Live",
-      tech: ["React", "Bootstrap", "API"],
-      details: "Developed official website for MSME organization providing resources, support, and information for small businesses. Integrated multiple services and responsive layouts.",
-      role: "Frontend Developer"
-    },
-    {
-      id: 3,
-      title: "UPICON",
-      description: "Industrial services and solutions platform",
-      shortDesc: "Industrial Services",
-      link: "https://upicon.in/",
-      type: "Live",
-      tech: ["React", "CSS", "JavaScript"],
-      details: "Created professional website showcasing industrial services and solutions with portfolio gallery, service pages, and contact systems.",
-      role: "Frontend Developer"
-    },
-    {
-      id: 4,
-      title: "Eduversity",
-      description: "Educational technology learning platform",
-      shortDesc: "EdTech Platform",
-      link: "https://eduversityedutech.com/",
-      type: "Live",
-      tech: ["React", "EdTech", "Learning"],
-      details: "Built educational technology platform offering courses, learning resources, and academic solutions with interactive features.",
-      role: "Frontend Developer"
-    },
-    {
-      id: 5,
-      title: "TOMATO",
-      description: "Food ordering and delivery platform",
-      shortDesc: "Food Delivery",
-      link: "https://food-del-lilac.vercel.app/",
-      type: "Portfolio",
-      tech: ["React", "CSS", "UI/UX"],
-      details: "Designed and developed complete food ordering system with menu browsing, cart management, and checkout process.",
-      role: "Full Stack Developer"
-    },
-    {
-      id: 6,
-      title: "Geek-Shop",
-      description: "Authentication system with forms",
-      shortDesc: "Login System",
-      link: "https://react-form-eight-brown.vercel.app/",
-      type: "Portfolio",
-      tech: ["React", "Forms", "Validation"],
-      details: "Created responsive login and registration forms with validation, animations, and secure authentication flow.",
-      role: "Frontend Developer"
-    },
-    {
-      id: 7,
-      title: "Educity",
-      description: "College information and resources portal",
-      shortDesc: "Education Portal",
-      link: "https://education-iota-fawn.vercel.app/",
-      type: "Portfolio",
-      tech: ["React", "Tailwind", "Education"],
-      details: "Built comprehensive college website with course information, faculty details, events calendar, and student resources.",
-      role: "Frontend Developer"
-    },
-    {
-      id: 8,
-      title: "Temperature Converter",
-      description: "Temperature conversion tool",
-      shortDesc: "Utility Tool",
-      link: "https://sonikagithub.github.io/tempconverter/",
-      type: "Portfolio",
-      tech: ["JavaScript", "HTML", "CSS"],
-      details: "Developed temperature conversion application with real-time calculations between Celsius, Fahrenheit, and Kelvin.",
-      role: "Frontend Developer"
-    }
-  ];
+const projects = [
+  {
+    id: 1,
+    title: "DAYLOGS",
+    description: "Enterprise HRMS and Workforce Management Platform",
+    shortDesc: "HRMS Platform",
+    link: "https://daylogs.in/",
+    type: "Live",
+    tech: ["React", "Tailwind CSS", "Node.js", "REST API", "JWT"],
+    details:
+      "Developed a comprehensive Human Resource Management System (HRMS) with modules for employee management, attendance tracking, leave management, payroll support, task monitoring, and analytics dashboards. Implemented secure JWT authentication, role-based access control, API integrations, reusable components, lazy loading, and responsive UI for seamless user experience across devices.",
+    role: "Frontend Developer"
+  },
+
+  {
+    id: 2,
+    title: "MSME OSEM",
+    description: "Government & Business Resource Portal",
+    shortDesc: "Business Portal",
+    link: "https://msmeosem.in/",
+    type: "Live",
+    tech: ["React", "Bootstrap", "REST API", "JavaScript"],
+    details:
+      "Designed and developed the official MSME portal providing information, schemes, resources, and support services for small and medium enterprises. Built responsive layouts, integrated APIs, optimized website performance, and implemented user-friendly navigation to improve accessibility and engagement.",
+    role: "Frontend Developer"
+  },
+
+  {
+    id: 3,
+    title: "UPICON",
+    description: "Industrial Consultancy & Services Platform",
+    shortDesc: "Industrial Services",
+    link: "https://upicon.in/",
+    type: "Live",
+    tech: ["React", "JavaScript", "CSS3", "REST API"],
+    details:
+      "Built a professional industrial services platform showcasing consultancy solutions, projects, tenders, and organizational information. Developed dynamic pages, integrated backend APIs, optimized UI responsiveness, and ensured seamless navigation across all sections.",
+    role: "Frontend Developer"
+  },
+
+  {
+    id: 4,
+    title: "Eduversity",
+    description: "EdTech Learning & Course Management Platform",
+    shortDesc: "EdTech Platform",
+    link: "https://eduversityedutech.com/",
+    type: "Live",
+    tech: ["React", "Tailwind CSS", "API Integration", "JWT"],
+    details:
+      "Developed an educational platform featuring course listings, learning resources, student registration, and dynamic content management. Implemented responsive design, API integration, authentication workflows, reusable UI components, and optimized performance for enhanced learning experiences.",
+    role: "Frontend Developer"
+  },
+
+  {
+    id: 5,
+    title: "TOMATO",
+    description: "Food Ordering & Delivery Application",
+    shortDesc: "Food Delivery",
+    link: "https://food-del-lilac.vercel.app/",
+    type: "Portfolio",
+    tech: ["React", "Node.js", "MongoDB", "CSS"],
+    details:
+      "Created a complete food ordering application with menu browsing, cart management, user authentication, order placement, and checkout functionality. Implemented responsive design, state management, API integration, and modern UI/UX practices.",
+    role: "Full Stack Developer"
+  },
+
+  {
+    id: 6,
+    title: "Geek-Shop",
+    description: "Authentication & User Management System",
+    shortDesc: "Login System",
+    link: "https://react-form-eight-brown.vercel.app/",
+    type: "Portfolio",
+    tech: ["React", "JWT", "Form Validation", "JavaScript"],
+    details:
+      "Developed a secure authentication system with login, registration, password validation, protected routes, and user session management. Focused on form validation, reusable components, responsive UI, and authentication best practices.",
+    role: "Frontend Developer"
+  },
+
+  {
+    id: 7,
+    title: "Educity",
+    description: "College & Educational Information Portal",
+    shortDesc: "Education Portal",
+    link: "https://education-iota-fawn.vercel.app/",
+    type: "Portfolio",
+    tech: ["React", "Tailwind CSS", "Responsive Design"],
+    details:
+      "Designed and developed a modern educational website featuring course information, faculty details, admission processes, events, and student resources. Implemented responsive layouts, optimized performance, and reusable UI components.",
+    role: "Frontend Developer"
+  },
+
+  {
+    id: 8,
+    title: "Temperature Converter",
+    description: "Real-Time Temperature Conversion Tool",
+    shortDesc: "Utility Tool",
+    link: "https://sonikagithub.github.io/tempconverter/",
+    type: "Portfolio",
+    tech: ["JavaScript", "HTML5", "CSS3"],
+    details:
+      "Built an interactive temperature conversion application supporting Celsius, Fahrenheit, and Kelvin conversions with instant calculations, input validation, and responsive design.",
+    role: "Frontend Developer"
+  }
+];
 
   const techIcons = {
     "React": <FaReact className="text-blue-500" />,

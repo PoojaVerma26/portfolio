@@ -1,4 +1,5 @@
-import React from "react";
+
+
 import {
   FaReact,
   FaNodeJs,
@@ -13,137 +14,108 @@ import {
   FaCode,
   FaServer,
   FaPaintBrush,
-  FaMobileAlt
+  FaMobileAlt,
 } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiExpress, SiCplusplus, SiC } from "react-icons/si";
+
+const skills = [
+  { icon: <FaReact />, name: "React JS" },
+  { icon: <FaNodeJs />, name: "Node JS" },
+  { icon: <FaDatabase />, name: "MySQL" },
+  { icon: <FaHtml5 />, name: "HTML5" },
+  { icon: <FaCss3Alt />, name: "CSS3" },
+  { icon: <FaJsSquare />, name: "JavaScript" },
+  { icon: <FaBootstrap />, name: "Bootstrap" },
+  { icon: <FaJava />, name: "Java" },
+  { icon: <FaLaptop />, name: "Responsive UI" },
+  { icon: <FaGlobe />, name: "Web Design" },
+  { icon: <FaCode />, name: "Frontend Dev" },
+  { icon: <FaServer />, name: "Backend Dev" },
+  { icon: <FaPaintBrush />, name: "Graphic Design" },
+  { icon: <FaMobileAlt />, name: "Mobile Friendly" },
+];
 
 const Services = () => {
-  const skills = [
-    { name: "React", icon: <FaReact className="w-12 h-12" color="#61DBFB" />, category: "Frontend" },
-    { name: "Node.js", icon: <FaNodeJs className="w-12 h-12" color="#68A063" />, category: "Backend" },
-    { name: "MongoDB", icon: <FaDatabase className="w-12 h-12" color="#4DB33D" />, category: "Database" },
-    { name: "HTML5", icon: <FaHtml5 className="w-12 h-12" color="#E34C26" />, category: "Frontend" },
-    { name: "CSS3", icon: <FaCss3Alt className="w-12 h-12" color="#1572B6" />, category: "Frontend" },
-    { name: "JavaScript", icon: <FaJsSquare className="w-12 h-12" color="#F7DF1E" />, category: "Frontend" },
-    { name: "Tailwind CSS", icon: <RiTailwindCssFill className="w-12 h-12" color="#38B2AC" />, category: "Frontend" },
-    { name: "Bootstrap", icon: <FaBootstrap className="w-12 h-12" color="#7952B3" />, category: "Frontend" },
-    { name: "C", icon: <SiC className="w-12 h-12" color="#A8B9CC" />, category: "Programming" },
-    { name: "C++", icon: <SiCplusplus className="w-12 h-12" color="#00599C" />, category: "Programming" },
-    { name: "Java", icon: <FaJava className="w-12 h-12" color="#007396" />, category: "Programming" },
-    { name: "Express.js", icon: <SiExpress className="w-12 h-12" color="#000000" />, category: "Backend" },
-  ];
-
-  const services = [
-    {
-      title: "Frontend Development",
-      description: "Building responsive, interactive web interfaces using modern frameworks like React.js with clean, maintainable code.",
-      icon: <FaCode className="w-8 h-8" />,
-      color: "from-blue-500 to-cyan-400"
-    },
-    {
-      title: "Backend Development",
-      description: "Developing robust server-side applications and RESTful APIs using Node.js, Express.js, and database integration.",
-      icon: <FaServer className="w-8 h-8" />,
-      color: "from-green-500 to-emerald-400"
-    },
-    {
-      title: "UI/UX Design",
-      description: "Creating beautiful, user-friendly interfaces with modern design principles and responsive layouts.",
-      icon: <FaPaintBrush className="w-8 h-8" />,
-      color: "from-purple-500 to-pink-400"
-    },
-    {
-      title: "Full-Stack Solutions",
-      description: "End-to-end web application development from concept to deployment with scalable architecture.",
-      icon: <FaLaptop className="w-8 h-8" />,
-      color: "from-orange-500 to-red-400"
-    },
-    {
-      title: "Web Applications",
-      description: "Building dynamic, feature-rich web applications with modern frameworks and best practices.",
-      icon: <FaGlobe className="w-8 h-8" />,
-      color: "from-indigo-500 to-blue-400"
-    },
-    {
-      title: "Responsive Design",
-      description: "Creating mobile-first, fully responsive websites that work seamlessly across all devices.",
-      icon: <FaMobileAlt className="w-8 h-8" />,
-      color: "from-teal-500 to-green-400"
-    }
-  ];
-
-  const skillCategories = [
-    { name: "Frontend", color: "bg-blue-100 text-blue-800" },
-    { name: "Backend", color: "bg-green-100 text-green-800" },
-    { name: "Database", color: "bg-emerald-100 text-emerald-800" },
-    { name: "Programming", color: "bg-purple-100 text-purple-800" }
-  ];
-
   return (
-    <div id="skills" className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header Section */}
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            My <span className="bg-gradient-to-r from-pink-600 to-[#E90E65] bg-clip-text text-transparent">Services</span> & <span className="bg-gradient-to-r from-pink-600 to-[#E90E65] bg-clip-text text-transparent">Skills</span>
-          </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            I specialize in full-stack web development with expertise in modern technologies and frameworks.
-            Delivering high-quality solutions with attention to detail and performance.
-          </p>
-        </div>
+    <section
+      id="skills"
+      className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20"
+    >
+      {/* Background Blur */}
+      <div className="absolute -top-32 -left-32 h-72 w-72 rounded-full bg-[#E90E65]/10 blur-3xl"></div>
 
-       
+      <div className="absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-[#E90E65]/10 blur-3xl"></div>
 
-        {/* Skills Section */}
-        <section className="mb-12">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 md:mb-0">
-              Technical <span className="text-[#E90E65]">Expertise</span>
-            </h2>
-            <div className="flex flex-wrap gap-3">
-              {skillCategories.map((category, index) => (
-                <span
-                  key={index}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold ${category.color}`}
-                >
-                  {category.name}
-                </span>
-              ))}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid items-center gap-14 lg:grid-cols-2">
+          
+          {/* LEFT IMAGE */}
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-[2rem] bg-white p-4 shadow-2xl">
+              
+              <img
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+                alt="Skills"
+                className="h-[450px] w-full rounded-[1.5rem] object-cover grayscale"
+              />
+
+              {/* Floating Card */}
+              <div className="absolute bottom-8 left-8 rounded-2xl bg-white/90 px-5 py-4 shadow-lg backdrop-blur-md">
+                <h4 className="text-xl font-bold text-[#161514]">
+                  14+ Skills
+                </h4>
+
+                <p className="text-sm text-gray-600">
+                  Modern Web Technologies
+                </p>
+              </div>
             </div>
+
+            {/* Decorative Blur */}
+            <div className="absolute -bottom-8 right-10 h-32 w-32 rounded-full bg-[#E90E65]/10 blur-2xl"></div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="group relative bg-white rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+          {/* RIGHT CONTENT */}
+          <div className="space-y-7">
+            
+            {/* Heading */}
+            <div className="space-y-4">
+              <span className="inline-flex rounded-full bg-[#E90E65]/10 px-4 py-1.5 text-sm font-medium text-[#E90E65]">
+                My Skills
+              </span>
+
+              <h2 className="text-3xl font-bold leading-snug text-[#161514] lg:text-4xl">
+                Technologies & Tools I Work With
+              </h2>
+
+              <p className="max-w-xl text-base leading-relaxed text-gray-600">
+                I build modern, responsive, and high-performance web
+                applications with clean UI and smooth user experience.
+              </p>
+            </div>
+
+            {/* Skills */}
+            <div className="flex flex-wrap gap-x-6 gap-y-4">
+              {skills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-gray-700"
+                >
+                  <span className="text-2xl text-[#E90E65]">
                     {skill.icon}
-                  </div>
-                  <h3 className="font-semibold text-gray-800 text-center mb-2">
+                  </span>
+
+                  <span className="text-sm font-medium">
                     {skill.name}
-                  </h3>
-                  <span className={`text-xs font-medium px-3 py-1 rounded-full ${
-                    skill.category === "Frontend" ? "bg-blue-50 text-blue-600" :
-                    skill.category === "Backend" ? "bg-green-50 text-[#E90E65]" :
-                    skill.category === "Database" ? "bg-emerald-50 text-[#d31010]" :
-                    "bg-purple-50 text-pink-600"
-                  }`}>
-                    {skill.category}
                   </span>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
 
-       
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,14 +18,15 @@ const Navbar = () => {
 
         {/* Desktop Links - Centered */}
         <div className="hidden md:flex space-x-6 flex-1 justify-center font-semibold">
-          <a href="#home" className="hover:text-gray-400">
+          {/* <a href="#home" className="hover:text-gray-400">
             Home
+          </a> */}
+
+          <a href="#projects" className="hover:text-gray-400">
+            Projects
           </a>
           <a href="#about" className="hover:text-gray-400">
             About
-          </a>
-          <a href="#projects" className="hover:text-gray-400">
-            Projects
           </a>
           <a href="#skills" className="hover:text-gray-400">
             Skills
@@ -78,7 +79,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-pink-500 text-white bg-opacity-80 z-50 md:hidden">
           <div className="flex flex-col items-center space-y-4 py-4">
-            {["home", "about", "projects", "skills", "contact"].map((item) => (
+            {[ "about", "projects", "skills", "contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
